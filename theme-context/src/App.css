@@ -1,0 +1,8 @@
+:root {
+  ---main-color: rgb(255, 200, 200);
+  ---txt-color: black;
+}
+
+body {
+  background-color: var(---main-color);
+}
