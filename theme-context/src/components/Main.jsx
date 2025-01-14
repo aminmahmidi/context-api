@@ -9,4 +9,3 @@ const Main = () => {
 }
 
 export default Main
-main

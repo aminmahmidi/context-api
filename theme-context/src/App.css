@@ -2,6 +2,10 @@
   ---main-color: rgb(255, 200, 200);
   ---txt-color: black;
 }
+.dark {
+  ---main-color: rgb(2, 2, 2);
+  ---txt-color: rgb(227, 227, 227);
+}
 
 body {
   background-color: var(---main-color);
