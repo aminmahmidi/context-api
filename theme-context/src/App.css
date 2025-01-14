@@ -1,12 +1,14 @@
 :root {
-  ---main-color: rgb(255, 200, 200);
-  ---txt-color: black;
+  --background-color: white;
+  --text-color: black;
 }
-.dark {
-  ---main-color: rgb(2, 2, 2);
-  ---txt-color: rgb(227, 227, 227);
+
+[data-theme="dark"] {
+  --background-color: black;
+  --text-color: white;
 }
 
 body {
-  background-color: var(---main-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
