@@ -7,8 +7,75 @@
   --background-color: black;
   --text-color: white;
 }
+* {
+  box-sizing: border-box;
+  font-family: IranSans;
+}
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  margin: 0;
+}
+
+.header {
+  border-bottom: 1.5px solid gray;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-container {
+  border: 2px solid red;
+  position: relative;
+}
+
+.drop-down-container {
+  margin: 0 20px;
+  position: relative;
+}
+.drop-down-btn {
+  border: none;
+  background-color: rgb(252, 65, 65);
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 7px 20px;
+}
+.drop-down {
+  position: absolute;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  margin: 10px 0;
+  padding: 5px 5px;
+  width: 100%;
+  box-shadow: 0px 3px 10px 0px rgba(78, 78, 78, 0.463);
+}
+.show-drop-down {
+  display: grid;
+}
+.hide-drop-down {
+  display: none;
+}
+input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
 }
