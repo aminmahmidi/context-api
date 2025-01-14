@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 
 const MyContext = createContext();
 const MyProvider = ({ children }) => {
-  const [dropDown, setDropDown] = useState(false);
+  const [dropDown, setDropDown] = useState(true);
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme || "system";

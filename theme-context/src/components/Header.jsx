@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { MyContext } from "../context/ThemeContext";
-
+import { Sun, Moon, Monitor, CaretDown } from "@phosphor-icons/react";
 const Header = () => {
   const {
     theme,
@@ -17,8 +17,15 @@ const Header = () => {
       </div>
 
       <div className="drop-down-container">
-        <button type="button" className="drop-down-btn" onClick={handleDropDown}>
+        <button
+          type="button"
+          className="drop-down-btn"
+          onClick={handleDropDown}
+        >
           تنظیمات تم
+          <span className={dropDown ? "arrow-icon" : "arrow-icon-down"}>
+            <CaretDown />
+          </span>
         </button>
         {
           <div
@@ -36,7 +43,9 @@ const Header = () => {
                 checked={theme === "light"}
                 onChange={handleThemeChange}
               />
-              روشن
+              <span>
+                <Sun /> روشن
+              </span>
             </label>
             <label>
               <input
@@ -46,7 +55,9 @@ const Header = () => {
                 checked={theme === "dark"}
                 onChange={handleThemeChange}
               />
-              تاریک
+              <span>
+                <Moon /> تاریک
+              </span>
             </label>
             <label>
               <input
@@ -56,7 +67,9 @@ const Header = () => {
                 checked={theme === "system"}
                 onChange={handleThemeChange}
               />
-             سیستم
+              <span>
+                <Monitor /> سیستم
+              </span>
             </label>
           </div>
         }
