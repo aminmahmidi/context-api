@@ -4,7 +4,7 @@ const Main = () => {
   return (
     <div className="main">
       <HandWaving />
-      <h3> Hello DaneshKar Staff !! </h3>
+      <h3> !! Hello DaneshKar Staff  </h3>
     </div>
   );
 };

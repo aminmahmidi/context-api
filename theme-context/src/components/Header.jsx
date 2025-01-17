@@ -35,7 +35,7 @@ const Header = () => {
                 : "hide-drop-down drop-down"
             }
           >
-            <label>
+            <div className="input-container">
               <input
                 type="radio"
                 name="theme"
@@ -43,11 +43,12 @@ const Header = () => {
                 checked={theme === "light"}
                 onChange={handleThemeChange}
               />
-              <span>
-                <Sun /> روشن
-              </span>
-            </label>
-            <label>
+              <div className="radio-icon">
+                <Sun />
+                <label>روشن</label>
+              </div>
+            </div>
+            <div className="input-container">
               <input
                 type="radio"
                 name="theme"
@@ -55,22 +56,23 @@ const Header = () => {
                 checked={theme === "dark"}
                 onChange={handleThemeChange}
               />
-              <span>
-                <Moon /> تاریک
-              </span>
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="theme"
-                value="system"
-                checked={theme === "system"}
-                onChange={handleThemeChange}
-              />
-              <span>
-                <Monitor /> سیستم
-              </span>
-            </label>
+              <div className="radio-icon">
+                <Moon /> <label>تاریک</label>
+              </div>
+            </div>
+            <div className="input-container">
+             
+                <input
+                  type="radio"
+                  name="theme"
+                  value="system"
+                  checked={theme === "system"}
+                  onChange={handleThemeChange}
+                />
+                <div className="radio-icon">
+                  <Monitor /> <label>سیستم</label>
+                </div>
+            </div>
           </div>
         }
       </div>
