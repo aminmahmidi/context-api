@@ -9,6 +9,7 @@ const Header = () => {
     setDropDown,
     dropDown,
     handleDropDown,
+    dropdownRef,
   } = useContext(MyContext);
   return (
     <div className="header">
@@ -16,7 +17,7 @@ const Header = () => {
         <h3 className="logo"> Amin Mahmidi</h3>
       </div>
 
-      <div className="drop-down-container">
+      <div className="drop-down-container" ref={dropdownRef}>
         <button
           type="button"
           className="drop-down-btn"
@@ -61,17 +62,16 @@ const Header = () => {
               </div>
             </div>
             <div className="input-container">
-             
-                <input
-                  type="radio"
-                  name="theme"
-                  value="system"
-                  checked={theme === "system"}
-                  onChange={handleThemeChange}
-                />
-                <div className="radio-icon">
-                  <Monitor /> <label>سیستم</label>
-                </div>
+              <input
+                type="radio"
+                name="theme"
+                value="system"
+                checked={theme === "system"}
+                onChange={handleThemeChange}
+              />
+              <div className="radio-icon">
+                <Monitor /> <label>سیستم</label>
+              </div>
             </div>
           </div>
         }

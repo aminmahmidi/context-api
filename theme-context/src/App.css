@@ -9,15 +9,25 @@
   --background-color: #000a2a;
   --text-color: rgb(241, 241, 241);
 }
+@font-face {
+  font-family: "myFont";
+  src: url("assets/IRANSansWebMedium.woff") format("woff"),
+  url("assets/IRANSansWebMedium.eot") format("eot"),
+    url("assets/IRANSansWebMedium.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
-  font-family: IranSans;
+  font-family: "myFont";
 }
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
   margin: 0;
+  transition: background-color 0.4s, color 0.4s;
+  font-family: "myFont";
 }
 
 .header {
@@ -120,6 +130,7 @@ body {
   opacity: 0;
   z-index: 2;
   cursor: pointer;
+  transition: 0.3s;
 }
 .radio-icon {
   display: flex;
@@ -127,13 +138,16 @@ body {
   padding: 5px 5px;
   width: 100%;
   border-radius: 7px;
+  transition: 0.3s;
 }
 .input-container input:checked + .radio-icon svg {
   background-color: var(--secondary-color);
+  /* transition: 0.2s; */
 }
 .input-container input:checked + .radio-icon {
   background-color: rgba(104, 104, 104, 0.162);
   border-radius: 8px;
+  transition: 0.3s;
 }
 .radio-icon svg {
   width: 2rem;

@@ -1,8 +1,8 @@
-import React, { createContext, useState, useEffect } from "react";
-
+import React, { createContext, useState, useEffect, useRef } from "react";
 const MyContext = createContext();
 const MyProvider = ({ children }) => {
   const [dropDown, setDropDown] = useState(true);
+  const dropdownRef = useRef(null);
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme || "system";
@@ -36,6 +36,19 @@ const MyProvider = ({ children }) => {
     };
   }, [theme]);
 
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setDropDown(true);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const handleDropDown = () => {
     setDropDown(!dropDown);
   };
@@ -49,6 +62,7 @@ const MyProvider = ({ children }) => {
         setDropDown,
         dropDown,
         handleDropDown,
+        dropdownRef,
       }}
     >
       {children}
